@@ -209,3 +209,8 @@ The engine maps it internally: `os.environ["GOOGLE_API_KEY"] = os.environ.get("G
 |---|---|---|
 | Student | `gemini/gemini-2.5-flash` | Default inference LM, runs in production |
 | Teacher | `gemini/gemini-2.5-flash` | Generates few-shot demonstrations during compilation only |
+
+## Streamlit Output
+
+<img width="1006" height="741" alt="image" src="https://github.com/user-attachments/assets/ed8c1f39-2c0c-4a62-ab83-56d3dc1a41f4" />
+
