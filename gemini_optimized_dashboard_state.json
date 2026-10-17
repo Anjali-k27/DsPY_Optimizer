@@ -1,0 +1,51 @@
+{
+  "extract.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "raw_transcript": "Q3 earnings call. Revenue is $4.2M. Churn decreased to 1.1%. New signups reached 8,000.",
+        "reasoning": "The transcript explicitly mentions:\n- Revenue: \"$4.2M\"\n- Churn: \"1.1%\"\n- New signups: 8,000 (or 8000)\n\nThese values map directly to the required keys: 'revenue', 'churn_rate', and 'new_signups'.",
+        "json_kpis": "{\n  \"revenue\": \"$4.2M\",\n  \"churn_rate\": \"1.1%\",\n  \"new_signups\": 8000\n}"
+      },
+      {
+        "augmented": true,
+        "raw_transcript": "Weekly standup. We saw 400 new signups. Revenue flat at $50k. Churn is 5%.",
+        "reasoning": "Extracted revenue of $50k, churn rate of 5%, and 400 new signups directly from the meeting transcript.",
+        "json_kpis": "{\"revenue\": \"$50k\", \"churn_rate\": \"5%\", \"new_signups\": 400}"
+      },
+      {
+        "augmented": true,
+        "raw_transcript": "Data review. No metrics reported today regarding financials or user base.",
+        "reasoning": "The transcript explicitly states that no metrics were reported today concerning financials or the user base. Therefore, 'revenue', 'churn_rate', and 'new_signups' cannot be extracted and are set to null.",
+        "json_kpis": "{\n  \"revenue\": null,\n  \"churn_rate\": null,\n  \"new_signups\": null\n}"
+      }
+    ],
+    "signature": {
+      "instructions": "Extract structured key performance indicators from raw meeting transcripts.",
+      "fields": [
+        {
+          "prefix": "Raw Transcript:",
+          "description": "The raw text of the daily operations meeting."
+        },
+        {
+          "prefix": "Reasoning:",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Json Kpis:",
+          "description": "Valid JSON containing exactly: 'revenue', 'churn_rate', and 'new_signups'. Output ONLY JSON."
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.10",
+      "dspy": "3.2.1",
+      "cloudpickle": "3.1"
+    }
+  }
+}
