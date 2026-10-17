@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ["GOOGLE_API_KEY"] = os.environ.get("GEMINI_API_KEY", "")
+os.environ["GOOGLE_API_KEY"] = os.environ.get("GOOGLE_API_KEY")
 
-student_lm = dspy.LM(model='gemini/gemini-2.5-flash', max_tokens=500)
-teacher_lm = dspy.LM(model='gemini/gemini-2.5-flash', max_tokens=500)
+student_lm = dspy.LM(model='gemini/gemini-3.8-flash', max_tokens=500)
+teacher_lm = dspy.LM(model='gemini/gemini-3.8-flash', max_tokens=500)
 
 dspy.configure(lm=student_lm)
 
