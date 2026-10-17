@@ -21,7 +21,7 @@ optimizer = dspy.BootstrapFewShot(
     max_labeled_demos=0,
 )
 
-print("Compiling pipeline with Gemini 2.5 Flash as Teacher...")
+print("Compiling pipeline with Gemini 3.8 Flash as Teacher...")
 
 with dspy.context(lm=teacher_lm):
     compiled_pipeline = optimizer.compile(
